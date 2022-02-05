@@ -1,0 +1,39 @@
+Test-Command: /usr/share/cargo/bin/cargo-auto-test rand_core 0.6.3 --all-targets --all-features
+Features: test-name=rust-rand-core:@
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test rand_core 0.6.3 --all-targets --no-default-features --features alloc
+Features: test-name=librust-rand-core-dev:alloc
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test rand_core 0.6.3 --all-targets 
+Features: test-name=librust-rand-core-dev:default
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test rand_core 0.6.3 --all-targets --no-default-features
+Features: test-name=librust-rand-core-dev:
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test rand_core 0.6.3 --all-targets --no-default-features --features getrandom
+Features: test-name=librust-rand-core+getrandom-dev:getrandom
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test rand_core 0.6.3 --all-targets --no-default-features --features serde1
+Features: test-name=librust-rand-core+serde-dev:serde1
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test rand_core 0.6.3 --all-targets --no-default-features --features serde
+Features: test-name=librust-rand-core+serde-dev:serde
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test rand_core 0.6.3 --all-targets --no-default-features --features std
+Features: test-name=librust-rand-core+std-dev:std
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable

@@ -1,0 +1,96 @@
+Source: rust-rand-core
+Section: rust
+Priority: optional
+Build-Depends: debhelper (>= 12),
+ dh-cargo (>= 25),
+ cargo:native <!nocheck>,
+ rustc:native <!nocheck>,
+ libstd-rust-dev <!nocheck>
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Wolfgang Silbermayr <wolfgang@silbermayr.at>
+Standards-Version: 4.5.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/rand-core]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/rand-core
+Homepage: https://rust-random.github.io/book
+X-Cargo-Crate: rand_core
+Rules-Requires-Root: no
+
+Package: librust-rand-core-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends}
+Suggests:
+ librust-rand-core+getrandom-dev (= ${binary:Version}),
+ librust-rand-core+serde-dev (= ${binary:Version}),
+ librust-rand-core+std-dev (= ${binary:Version})
+Provides:
+ librust-rand-core+alloc-dev (= ${binary:Version}),
+ librust-rand-core+default-dev (= ${binary:Version}),
+ librust-rand-core-0-dev (= ${binary:Version}),
+ librust-rand-core-0+alloc-dev (= ${binary:Version}),
+ librust-rand-core-0+default-dev (= ${binary:Version}),
+ librust-rand-core-0.6-dev (= ${binary:Version}),
+ librust-rand-core-0.6+alloc-dev (= ${binary:Version}),
+ librust-rand-core-0.6+default-dev (= ${binary:Version}),
+ librust-rand-core-0.6.3-dev (= ${binary:Version}),
+ librust-rand-core-0.6.3+alloc-dev (= ${binary:Version}),
+ librust-rand-core-0.6.3+default-dev (= ${binary:Version})
+Description: Core random number generator traits and tools - Rust source code
+ This package contains the source for the Rust rand_core crate, packaged by
+ debcargo for use with cargo and dh-cargo.
+
+Package: librust-rand-core+getrandom-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-rand-core-dev (= ${binary:Version}),
+ librust-getrandom-0.2+default-dev
+Provides:
+ librust-rand-core-0+getrandom-dev (= ${binary:Version}),
+ librust-rand-core-0.6+getrandom-dev (= ${binary:Version}),
+ librust-rand-core-0.6.3+getrandom-dev (= ${binary:Version})
+Description: Core random number generator traits and tools - feature "getrandom"
+ This metapackage enables feature "getrandom" for the Rust rand_core crate, by
+ pulling in any additional dependencies needed by that feature.
+
+Package: librust-rand-core+serde-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-rand-core-dev (= ${binary:Version}),
+ librust-serde-1+default-dev,
+ librust-serde-1+derive-dev
+Provides:
+ librust-rand-core+serde1-dev (= ${binary:Version}),
+ librust-rand-core-0+serde-dev (= ${binary:Version}),
+ librust-rand-core-0+serde1-dev (= ${binary:Version}),
+ librust-rand-core-0.6+serde-dev (= ${binary:Version}),
+ librust-rand-core-0.6+serde1-dev (= ${binary:Version}),
+ librust-rand-core-0.6.3+serde-dev (= ${binary:Version}),
+ librust-rand-core-0.6.3+serde1-dev (= ${binary:Version})
+Description: Core random number generator traits and tools - feature "serde" and 1 more
+ This metapackage enables feature "serde" for the Rust rand_core crate, by
+ pulling in any additional dependencies needed by that feature.
+ .
+ Additionally, this package also provides the "serde1" feature.
+
+Package: librust-rand-core+std-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-rand-core-dev (= ${binary:Version}),
+ librust-rand-core+alloc-dev (= ${binary:Version}),
+ librust-rand-core+getrandom-dev (= ${binary:Version}),
+ librust-getrandom-0.2+std-dev
+Provides:
+ librust-rand-core-0+std-dev (= ${binary:Version}),
+ librust-rand-core-0.6+std-dev (= ${binary:Version}),
+ librust-rand-core-0.6.3+std-dev (= ${binary:Version})
+Description: Core random number generator traits and tools - feature "std"
+ This metapackage enables feature "std" for the Rust rand_core crate, by pulling
+ in any additional dependencies needed by that feature.
