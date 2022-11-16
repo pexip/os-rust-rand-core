@@ -1,3 +1,9 @@
+rust-rand-core (0.6.3-2pexip1) pexip; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Wed, 16 Nov 2022 23:52:46 +0000
+
 rust-rand-core (0.6.3-2) unstable; urgency=medium
 
   * Team upload.
